@@ -1,12 +1,16 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
+/* ===== Import Screens ===== */
 import ProfileScreen from "../screens/ProfileScreen";
+import SabcaScreen from "../screens/SabcaScreen";
 
-type TabParamList = {
+
+/* ===== Types ===== */
+export type TabParamList = {
   Profile: undefined;
   SABCA: undefined;
   Events: undefined;
@@ -16,13 +20,8 @@ type TabParamList = {
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
-const DummyScreen = ({ title }: { title: string }) => (
-  <View style={styles.dummy}>
-    <Text>{title}</Text>
-  </View>
-);
-
-const GradientTabBarBackground = () => (
+/* ===== Gradient Background ===== */
+const TabBarBackground = () => (
   <LinearGradient
     colors={["#dc2626", "#a855f7", "#2563eb"]}
     start={{ x: 0, y: 0 }}
@@ -31,22 +30,23 @@ const GradientTabBarBackground = () => (
   />
 );
 
+/* ===== Navigator ===== */
 const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
 
-        tabBarBackground: () => <GradientTabBarBackground />,
+        tabBarBackground: () => <TabBarBackground />,
 
         tabBarStyle: {
-          height: 70,
+          height: 72,
           borderTopWidth: 0,
           position: "absolute",
         },
 
         tabBarIcon: ({ focused }) => {
-          const icons: Record<
+          const iconMap: Record<
             keyof TabParamList,
             keyof typeof Ionicons.glyphMap
           > = {
@@ -59,7 +59,7 @@ const TabNavigator = () => {
 
           return (
             <Ionicons
-              name={icons[route.name]}
+              name={iconMap[route.name]}
               size={24}
               color={focused ? "#ffffff" : "rgba(255,255,255,0.6)"}
             />
@@ -79,35 +79,19 @@ const TabNavigator = () => {
       })}
     >
       <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="SABCA">
-        {() => <DummyScreen title="SABCA" />}
-      </Tab.Screen>
-      <Tab.Screen name="Events">
-        {() => <DummyScreen title="Events" />}
-      </Tab.Screen>
-      <Tab.Screen name="Services">
-        {() => <DummyScreen title="Services" />}
-      </Tab.Screen>
-      <Tab.Screen name="Community">
-        {() => <DummyScreen title="Community" />}
-      </Tab.Screen>
+      <Tab.Screen name="SABCA" component={SabcaScreen} />
+      
     </Tab.Navigator>
   );
 };
 
 export default TabNavigator;
 
-/* ================= STYLES ================= */
-
+/* ===== Styles ===== */
 const styles = StyleSheet.create({
   label: {
     fontSize: 12,
     marginTop: -2,
     fontWeight: "500",
-  },
-  dummy: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
