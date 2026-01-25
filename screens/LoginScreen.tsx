@@ -23,8 +23,8 @@ export default function LoginScreen() {
   return (
     <LinearGradient
       colors={["#ef4444", "#a855f7", "#2563eb"]}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
+      start={{ x: 0, y: 0.5 }}
+      end={{ x: 1, y: 0.5 }}
       style={styles.bg}
     >
       <ScrollView contentContainerStyle={styles.center}>
@@ -53,7 +53,7 @@ export default function LoginScreen() {
 
           {/* Password */}
           <Text style={styles.label}>Password</Text>
-          <View style={styles.inputWrapper}>
+          <View style={styles.inputWrapperMuted}>
             <Ionicons name="lock-closed-outline" size={18} color="#9ca3af" />
             <TextInput
               placeholder="Enter password"
@@ -73,7 +73,9 @@ export default function LoginScreen() {
           {/* Remember + Forgot */}
           <View style={styles.rowBetween}>
             <View style={styles.rememberRow}>
-              <View style={styles.checkbox} />
+              <View style={styles.checkbox}>
+                <Ionicons name="checkmark" size={12} color="#7c3aed" />
+              </View>
               <Text style={styles.rememberText}>Remember me</Text>
             </View>
             <TouchableOpacity>
@@ -81,7 +83,7 @@ export default function LoginScreen() {
             </TouchableOpacity>
           </View>
 
-          {/* Login */}
+          {/* Login Button */}
           <LinearGradient
             colors={["#dc2626", "#2563eb"]}
             start={{ x: 0, y: 0 }}
@@ -103,7 +105,7 @@ export default function LoginScreen() {
             <View style={styles.line} />
           </View>
 
-          {/* Social */}
+          {/* Social Login */}
           <View style={styles.socialRow}>
             <TouchableOpacity style={styles.socialBtn}>
               <Ionicons name="logo-google" size={18} color="#ea4335" />
@@ -141,9 +143,14 @@ const styles = StyleSheet.create({
   card: {
     width: Platform.OS === "web" ? 420 : "100%",
     alignSelf: "center",
-    backgroundColor: "rgba(255,255,255,0.95)",
-    borderRadius: 28,
-    padding: 24,
+    backgroundColor: "#fff",
+    borderRadius: 30,
+    padding: 26,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 30,
+    shadowOffset: { width: 0, height: 15 },
+    elevation: 12,
   },
   logoBox: {
     width: 80,
@@ -174,6 +181,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 2,
+    borderColor: "#c084fc",
+    borderRadius: 14,
+    paddingHorizontal: 12,
+    marginBottom: 16,
+  },
+  inputWrapperMuted: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 2,
     borderColor: "#e5e7eb",
     borderRadius: 14,
     paddingHorizontal: 12,
@@ -196,11 +212,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   checkbox: {
-    width: 16,
-    height: 16,
+    width: 18,
+    height: 18,
     borderRadius: 4,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: "#9ca3af",
+    alignItems: "center",
+    justifyContent: "center",
     marginRight: 6,
   },
   rememberText: {
@@ -215,7 +233,11 @@ const styles = StyleSheet.create({
   loginBtn: {
     borderRadius: 14,
     paddingVertical: 14,
-    marginBottom: 20,
+    marginBottom: 22,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 6 },
   },
   loginText: {
     color: "#fff",
@@ -246,8 +268,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    gap: 6,
-    paddingVertical: 12,
+    gap: 8,
+    paddingVertical: 14,
     borderWidth: 2,
     borderColor: "#e5e7eb",
     borderRadius: 14,

@@ -7,6 +7,9 @@ import { LinearGradient } from "expo-linear-gradient";
 /* ===== Import Screens ===== */
 import ProfileScreen from "../screens/ProfileScreen";
 import SabcaScreen from "../screens/SabcaScreen";
+import EventsScreen from "../screens/EventsScreen";
+import ServicesScreen from "../screens/ServicesScreen";
+import CommunityScreen from "../screens/CommunityScreen";
 
 
 /* ===== Types ===== */
@@ -80,6 +83,10 @@ const TabNavigator = () => {
     >
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="SABCA" component={SabcaScreen} />
+      <Tab.Screen name="Events" component={EventsScreen} />
+      <Tab.Screen name="Services" component={ServicesScreen} />
+      <Tab.Screen name="Community" component={CommunityScreen} />
+
       
     </Tab.Navigator>
   );
