@@ -36,7 +36,7 @@ const LeaderCard: React.FC<Props> = ({ leader }) => {
           {/* Call Button */}
           <TouchableOpacity activeOpacity={0.8}>
             <LinearGradient
-              colors={["#dc2626", "#2563eb"]}
+              colors={["#FF671F", "#2563eb"]}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
               style={styles.callBtn}

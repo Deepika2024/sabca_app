@@ -50,7 +50,7 @@ const EventCard: React.FC<Props> = ({
 
         <TouchableOpacity activeOpacity={0.9}>
           <LinearGradient
-            colors={["#dc2626", "#2563eb"]}
+            colors={["#FF671F", "#2563eb"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             style={styles.button}

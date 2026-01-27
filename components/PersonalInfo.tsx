@@ -35,7 +35,7 @@ const PersonalInfo = ({ info }: Props) => {
       {/* Action Buttons */}
       <View style={styles.buttonRow}>
         <LinearGradient
-          colors={["#dc2626", "#2563eb"]}
+          colors={["#FF671F", "#2563eb"]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
           style={styles.primaryBtn}

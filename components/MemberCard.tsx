@@ -18,7 +18,7 @@ type Props = {
 const MemberCard = ({ member }: Props) => {
   return (
     <LinearGradient
-      colors={["#dc2626", "#b91c1c"]}
+      colors={["#FF671F", "#E04E0F"]}
       style={styles.card}
     >
       {/* Top */}

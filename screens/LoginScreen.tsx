@@ -22,7 +22,7 @@ export default function LoginScreen() {
 
   return (
     <LinearGradient
-      colors={["#ef4444", "#a855f7", "#2563eb"]}
+      colors={["#FF671F", "#a855f7", "#2563eb"]}
       start={{ x: 0, y: 0.5 }}
       end={{ x: 1, y: 0.5 }}
       style={styles.bg}
@@ -31,7 +31,7 @@ export default function LoginScreen() {
         <View style={styles.card}>
           {/* Logo */}
           <LinearGradient
-            colors={["#dc2626", "#2563eb"]}
+            colors={["#FF671F", "#2563eb"]}
             style={styles.logoBox}
           >
             <Ionicons name="business" size={36} color="#fff" />
@@ -85,7 +85,7 @@ export default function LoginScreen() {
 
           {/* Login Button */}
           <LinearGradient
-            colors={["#dc2626", "#2563eb"]}
+            colors={["#FF671F", "#2563eb"]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
             style={styles.loginBtn}
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     color: "#6b7280",
   },
   registerLink: {
-    color: "#dc2626",
+    color: "#FF671F",
     fontWeight: "700",
   },
 });

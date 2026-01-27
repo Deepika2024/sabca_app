@@ -30,7 +30,7 @@ const ServicesBannerAndPartners = () => {
     <View>
       {/* ===== MEMBER SERVICES BANNER ===== */}
       <LinearGradient
-        colors={["#dc2626", "#b91c1c"]}
+        colors={["#FF671F", "#E04E0F"]}
         style={styles.banner}
       >
         <Text style={styles.bannerTitle}>Member Services</Text>

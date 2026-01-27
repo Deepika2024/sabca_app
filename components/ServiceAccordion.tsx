@@ -67,7 +67,7 @@ const ServiceAccordion: React.FC<Props> = ({
           ))}
 
           <LinearGradient
-            colors={["#dc2626", "#2563eb"]}
+            colors={["#FF671F", "#2563eb"]}
             style={styles.button}
           >
             <Text style={styles.buttonText}>Learn More</Text>

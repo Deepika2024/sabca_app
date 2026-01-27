@@ -16,7 +16,7 @@ const ProfileHeader: React.FC<Props> = ({
 }) => {
   return (
     <LinearGradient
-      colors={["#dc2626", "#a855f7", "#2563eb"]}
+      colors={["#FF671F", "#a855f7", "#2563eb"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
       style={styles.header}
